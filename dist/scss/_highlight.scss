@@ -1,0 +1,112 @@
+.highlights{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+    gap: 20px;
+    
+
+}
+
+
+.highlight{
+    padding: 20px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $bg-desaturated-blue;
+    border-radius: 5px;
+    position: relative;
+
+    
+
+
+    &--facebook::before{
+         
+       background : $Facebook;
+    }
+    &--twitter::before{
+       background: $Twitter;
+    }
+    &--instagram::before{
+       background : $Instagram;
+    }
+    &--youtube::before{
+       background : $YouTube;
+    }
+    &::before{
+        content: "";
+        height: 50px;
+        z-index: -1;
+        width: 100%;
+        position: absolute;
+        top: -5px;
+        left: 0;
+        border-radius: 5px;
+         
+    }
+
+    
+
+    &__user, &__progress{
+        display: flex;
+    }
+
+
+    &__user{
+        display: flex;
+        align-items: center;
+        &-icon{
+            width: 15px;
+            height: 15px;
+            margin-right: 5px;
+
+        }
+        &-name{
+            font-weight: 700;
+            font-size: 0.7rem;
+            color: $text-desaturated-blue;
+        }
+    }
+
+    &__count{
+        display: flex;
+        flex-direction: column;
+         text-align: center;
+         margin: 25px 0;
+
+        &-number{
+        font-size: 3.5rem;
+        font-weight: 700;
+        letter-spacing: -3px;
+        color: $text-white;
+        }
+        &-label{
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            color: $text-desaturated-blue;
+            letter-spacing: 4px;
+        }
+    }
+
+    &__progress{
+        display: flex;
+        align-items: center;
+
+        &--up{
+        color: $primary-green;
+        }
+        &--down{
+            color: $primary-red;
+        }
+
+        &-icon{
+            width: 5px;
+            height: 5px;
+            margin-right: 3px;
+        }
+        &-label{
+            font-size: 0.7rem;
+            font-weight: 700;
+        }
+    }
+}
